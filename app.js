@@ -15,4 +15,6 @@ app.use(proxy(FAH, {
 }));
 app.listen(PORT, () => console.log(`Proxy is running at ${HOST}:${PORT}\n`));
 
+require('./browse');
+
 module.exports = app;
