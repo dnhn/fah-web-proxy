@@ -8,7 +8,8 @@ const FAH = `${HOST}:7396`;
 app.use(proxy(FAH, {
   userResDecorator: (_, proxyData, userReq) => {
     if (userReq.path === '/api/updates' && proxyData) {
-      console.log(JSON.parse(proxyData.toString('utf-8'))[0]);
+      const data = JSON.parse(proxyData.toString('utf-8'))[0];
+      if (data[0] === '/api/slots') console.log(data[1][0]);
     }
     return new Promise(resolve => resolve(proxyData));
   }

@@ -9,6 +9,6 @@ const driver = new webdriver.Builder()
 driver.get('http://127.0.0.1:4444');
 driver.manage().window().minimize();
 
-setInterval(() => {
-  driver.findElement(webdriver.By.id('slots')).click();
-}, 120000);
+const keepAlive = driver.findElement(webdriver.By.id('slots'));
+
+setInterval(() => keepAlive.click(), 120000);
