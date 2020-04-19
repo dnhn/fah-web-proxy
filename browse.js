@@ -6,9 +6,4 @@ const driver = new webdriver.Builder()
   .setChromeOptions({ args: ['--headless'] })
   .build();
 
-driver.get('http://127.0.0.1:4444');
-driver.manage().window().minimize();
-
-const keepAlive = driver.findElement(webdriver.By.id('slots'));
-
-setInterval(() => keepAlive.click(), 120000);
+module.exports = driver;
