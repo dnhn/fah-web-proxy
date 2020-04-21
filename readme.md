@@ -5,7 +5,7 @@ This proxy is a wrapper on the web client to watch for its API calls and capture
 
 ## Response format
 ### Attributes and their values
-```json
+```
 {
   id: '00',
   status: 'READY' | 'RUNNING' | 'STOPPING' | 'PAUSED',
@@ -30,7 +30,7 @@ This proxy is a wrapper on the web client to watch for its API calls and capture
 
 ### `READY` state
 #### Wait for new work unit
-```json
+```
 {
   ...
   status: 'READY',
@@ -42,7 +42,7 @@ This proxy is a wrapper on the web client to watch for its API calls and capture
 ```
 
 ### `RUNNING` state
-```json
+```
 {
   ...
   status: 'RUNNING',
@@ -62,7 +62,7 @@ This proxy is a wrapper on the web client to watch for its API calls and capture
 
 ### `STOPPING` state
 #### By user
-```json
+```
 {
   ...
   status: 'STOPPING',
@@ -74,7 +74,7 @@ This proxy is a wrapper on the web client to watch for its API calls and capture
 ```
 
 #### Wait for idle
-```json
+```
 {
   ...
   status: 'STOPPING',
@@ -88,7 +88,7 @@ This proxy is a wrapper on the web client to watch for its API calls and capture
 
 ### `PAUSED` state
 #### By user
-```json
+```
 {
   ...
   status: 'PAUSED',
@@ -100,7 +100,7 @@ This proxy is a wrapper on the web client to watch for its API calls and capture
 ```
 
 #### Wait for idle
-```json
+```
 {
   ...
   status: 'PAUSED',
@@ -113,7 +113,7 @@ This proxy is a wrapper on the web client to watch for its API calls and capture
 ```
 
 #### On battery
-```json
+```
 {
   ...
   status: 'PAUSED',

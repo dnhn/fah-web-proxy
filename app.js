@@ -1,7 +1,7 @@
 const app = require('express')();
 const proxy = require('express-http-proxy');
 const webdriver = require('selenium-webdriver');
-const browser = require('./browse');
+const browser = require('./browser');
 
 const HOST = 'http://127.0.0.1';
 const PORT = 4444;
