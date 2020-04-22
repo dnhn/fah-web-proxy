@@ -29,6 +29,8 @@ setInterval(_ => {
   console.log(workData);
 
   // Reduce waiting time to retrieve new work unit
+  // When the client is paused then unpaused,
+  // the waiting time will reduce significantly.
   if (workData.waitingon === 'WS Assignment' &&
     minuteValue(workData.nextattempt) > 0) {
     browser.elements.btnStop.click();
