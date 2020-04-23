@@ -8,7 +8,10 @@ const FAH = `${HOST}:7396`;
 
 let workData = {};
 
-const minuteValue = att => att.slice(0, att.indexOf('min')).trim();
+const minuteValue = att =>
+  att.indexOf('min') !== -1 ?
+    att.slice(0, att.indexOf('min')).trim() :
+    0;
 
 // Proxy server
 app.use(proxy(FAH, {
@@ -28,16 +31,16 @@ browser.open();
 setInterval(_ => {
   console.log(workData);
 
+  // Simulate actions on web page to prevent it from sleeping
+  browser.elements.keepAlive.click();
+
   // Reduce waiting time to retrieve new work unit
   // When the client is paused then unpaused,
   // the waiting time will reduce significantly.
   if (workData.waitingon === 'WS Assignment' &&
     minuteValue(workData.nextattempt) > 0) {
     browser.elements.btnStop.click();
-    setTimeout(_ => browser.elements.btnPause.click(), 1000);
-    setTimeout(_ => browser.elements.btnRun.click(), 10000);
+    setTimeout(_ => browser.elements.btnPause.click(), 2000);
+    setTimeout(_ => browser.elements.btnRun.click(), 15000);
   }
-}, 60000);
-
-// Simulate actions on web page to prevent it from sleeping
-setInterval(_ => browser.elements.keepAlive.click(), 120000);
+}, 120000);
