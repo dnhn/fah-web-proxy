@@ -41,6 +41,6 @@ setInterval(_ => {
     minuteValue(workData.nextattempt) > 0) {
     browser.elements.btnStop.click();
     setTimeout(_ => browser.elements.btnPause.click(), 2000);
-    setTimeout(_ => browser.elements.btnRun.click(), 15000);
+    setTimeout(_ => browser.elements.btnRun.click(), 10000);
   }
 }, 120000);
