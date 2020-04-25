@@ -29,7 +29,7 @@ browser.open();
 
 // Periodically inspect work data
 setInterval(_ => {
-  console.log(workData);
+  console.log(Date.now(), workData);
 
   // Simulate actions on web page to prevent it from sleeping
   browser.elements.keepAlive.click();
@@ -41,6 +41,8 @@ setInterval(_ => {
     minuteValue(workData.nextattempt) > 0) {
     browser.elements.btnStop.click();
     setTimeout(_ => browser.elements.btnPause.click(), 2000);
+    console.log('paused');
     setTimeout(_ => browser.elements.btnRun.click(), 10000);
+    console.log('unpaused');
   }
 }, 120000);
