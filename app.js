@@ -27,5 +27,5 @@ setInterval(_ => {
   console.log(Date.now(), workData);
 
   // Simulate actions on web page to prevent it from sleeping
-  browser.elements.keepAlive.click();
+  browser.keepAlive.click();
 }, 120000);

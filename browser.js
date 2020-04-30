@@ -7,6 +7,7 @@ const driver = new webdriver.Builder()
   .build();
 
 module.exports = {
+  keepAlive: driver.findElement(webdriver.By.id('slots')),
   open: () => {
     driver.get('http://127.0.0.1:4444');
     driver.manage().window().minimize();
