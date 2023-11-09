@@ -7,7 +7,7 @@
     "start": "nodemon app.js"
   },
   "dependencies": {
-    "chromedriver": "81.0.0",
+    "chromedriver": "119.0.1",
     "express": "4.16.1",
     "express-http-proxy": "1.6.0",
     "nodemon": "2.0.3",
